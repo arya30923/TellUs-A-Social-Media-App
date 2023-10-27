@@ -5,6 +5,5 @@ const page = async () => {
       </section>
     )
   }
-  
   export default page
   
