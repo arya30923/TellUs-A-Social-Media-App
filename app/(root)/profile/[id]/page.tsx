@@ -13,7 +13,7 @@ async function Page({ params }: { params: { id: string } }) {
     if (!user) return null;
 
     const userInfo = await fetchUser(params.id);
-//    console.log({userInfo})
+   
     if (!userInfo?.onboarded) redirect("/onboarding");
 
     return (
@@ -40,7 +40,7 @@ async function Page({ params }: { params: { id: string } }) {
                                     height={24}
                                     className="object-contain"
                                 />
-                               <p className="max-sm:hidden">{tab.label}</p>
+                                <p className="max-sm:hidden">{tab.label}</p>
                                 {tab.label === 'Posts' && (
                                     <p className="ml-1 rounded-sm bg-light-4 px-2 py-1 !text-tiny-medium text-light-2">
                                         
