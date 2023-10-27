@@ -1,4 +1,0 @@
-thread.tsx -> post.tsx
-thread.action.ts-> post.action.ts
-thread.model.ts-> post.model.ts
-thread.ts -> post.ts
