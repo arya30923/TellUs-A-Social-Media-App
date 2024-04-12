@@ -1,25 +1,25 @@
-import '../globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { ClerkProvider } from "@clerk/nextjs"
+import "../globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 
-import Topbar from '@/components/shared/Topbar'
-import LeftSidebar from '@/components/shared/LeftSidebar'
+import Topbar from "@/components/shared/Topbar";
+import LeftSidebar from "@/components/shared/LeftSidebar";
 
-import Bottombar from '@/components/shared/Bottombar'
-import RightSidebar from '@/components/shared/RightSidebar'
+import Bottombar from "@/components/shared/Bottombar";
+import RightSidebar from "@/components/shared/RightSidebar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'TellUs',
-  description: 'A next.js 13 Meta Application'
-}
+  title: "TellUs",
+  description: "A next.js 13 Meta Application",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <ClerkProvider>
@@ -30,20 +30,16 @@ export default function RootLayout({
           <main className="flex flex-row">
             <LeftSidebar />
 
-            <section className="main-container bg-gradient-to-br from-gray-700 to-black-500">
-              <div className="w-full max-w-4xl">
-                {children}
-              </div>
+            <section className="main-container bg-gradient-to-br from-gray-800 to-gray-700">
+              <div className="w-full max-w-4xl">{children}</div>
             </section>
 
             <RightSidebar />
           </main>
 
-
           <Bottombar />
-
         </body>
       </html>
     </ClerkProvider>
-  )
+  );
 }
