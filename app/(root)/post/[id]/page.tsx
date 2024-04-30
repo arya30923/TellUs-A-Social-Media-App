@@ -1,5 +1,4 @@
 import PostCard from "@/components/cards/PostCard";
-import { fetchPosts } from "@/lib/actions/post.actions";
 import { currentUser } from "@clerk/nextjs";
 import { fetchPostById } from "@/lib/actions/post.actions";
 import { fetchUser } from "@/lib/actions/user.actions";
@@ -26,6 +25,7 @@ const Page = async ({ params }: { params: {id:string }}) =>{
             currentUserId={user?.id || "" }
             parentId={post.parentId}
             content={post.text}
+            imageLink={post.imageLink}
             author={post.author}
             community={post.community}
             createdAt={post.createdAt}
@@ -49,6 +49,7 @@ const Page = async ({ params }: { params: {id:string }}) =>{
             currentUserId={childItem?.id || "" }
             parentId={childItem.parentId}
             content={childItem.text}
+            imageLink={childItem.imageLink}
             author={childItem.author}
             community={childItem.community}
             createdAt={childItem.createdAt}
